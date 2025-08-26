@@ -1,3 +1,4 @@
+# visualization.py
 import matplotlib.pyplot as plt
 import numpy as np
 import streamlit as st
@@ -33,3 +34,4 @@ def plot_retrieval_history():
     ax.legend()
 
     st.pyplot(fig)
+
