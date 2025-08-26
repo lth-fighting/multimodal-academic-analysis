@@ -19,20 +19,20 @@
 - **摘要模型**: [Bart-large-chinese](https://huggingface.co/facebook/bart-large-chinese)
 - **向量数据库**: [ChromaDB](https://www.trychroma.com/)
 - **NLP 框架**: [LangChain](https://www.langchain.com/), [Transformers](https://huggingface.co/docs/transformers)
-- **开发语言**: Python 3.8+
+- **开发语言**: Python 3.9+
 
 ## 📦 安装与运行
 
 ### 前提条件
 
-- Python 3.8 或更高版本
+- Python 3.9 或更高版本
 - Git
 - 一个有效的 DeepSeek API Key (从[官网](https://platform.deepseek.com/)获取)
 
 ### 1. 克隆项目
 
 ```bash
-git clone <你的项目仓库地址>
+git clone https://github.com/lth-fighting/multimodal-academic-analysis.git
 cd multimodal-academic-qa-system
 ```
 
