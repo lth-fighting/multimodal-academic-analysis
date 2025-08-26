@@ -3,7 +3,7 @@
 
 
 ## 🎯 目录用途
-项目根目录下的 `models/` 文件夹，用于统一存放自行下载的大语言模型文件，当前主要需放置 **BGE-small-zh-v1.5 嵌入模型**（约100MB+）。  
+项目根目录下的 'bge-small-zh-v1.5' 文件夹，用于统一存放自行下载的大语言模型文件，当前主要需放置 **BGE-small-zh-v1.5 嵌入模型**（约100MB+）。  
 由于模型文件体积较大，无法直接纳入Git仓库（避免仓库体积超标、下载缓慢），需用户手动下载并按指定结构放置。
 
 
@@ -19,9 +19,9 @@
    ```
 
 2. **克隆模型仓库到指定目录**  
-   直接将Hugging Face模型仓库克隆到项目的 `models/bge-small-zh-v1.5/` 路径：
+   直接将Hugging Face模型仓库克隆到项目的 `bge-small-zh-v1.5/` 路径：
    ```bash
-   git clone https://huggingface.co/BAAI/bge-small-zh-v1.5 ./models/bge-small-zh-v1.5
+   git clone https://huggingface.co/BAAI/bge-small-zh-v1.5 ./bge-small-zh-v1.5
    ```
 
 
@@ -40,8 +40,7 @@
 3. **创建目录结构**  
    在项目根目录手动创建 `models/` 及子目录，最终结构如下：
    ```text
-   models/
-   └── bge-small-zh-v1.5/
+   bge-small-zh-v1.5/
        ├── pytorch_model.bin
        ├── config.json
        ├── tokenizer.json
@@ -58,7 +57,7 @@
 # config.py 中修改嵌入模型路径
 # 原路径：EMBEDDING_MODEL = "./bge-small-zh-v1.5"
 # 新路径（适配 models/ 目录结构）：
-EMBEDDING_MODEL = "./models/bge-small-zh-v1.5"
+EMBEDDING_MODEL = "./bge-small-zh-v1.5"
 ```
 
 
@@ -68,7 +67,7 @@ EMBEDDING_MODEL = "./models/bge-small-zh-v1.5"
 python -c "
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 # 加载本地模型
-embeddings = HuggingFaceEmbeddings(model_name='./models/bge-small-zh-v1.5')
+embeddings = HuggingFaceEmbeddings(model_name='./bge-small-zh-v1.5')
 # 生成测试向量（验证功能）
 test_vector = embeddings.embed_query('学术文献分析')
 print(f'模型加载成功！测试向量维度：{len(test_vector)}')
@@ -89,9 +88,9 @@ print(f'模型加载成功！测试向量维度：{len(test_vector)}')
 
 ## ⚠️ 注意事项
 1. **文件完整性**：缺少任何核心文件（如 `pytorch_model.bin`）会导致模型加载失败，下载后需核对文件列表。
-2. **缓存文件**：首次运行系统时，会在 `models/bge-small-zh-v1.5/` 目录下生成 `.cache/` 文件夹，为PyTorch自动生成的缓存，属于正常现象，无需删除。
+2. **缓存文件**：首次运行系统时，会在 `bge-small-zh-v1.5/` 目录下生成 `.cache/` 文件夹，为PyTorch自动生成的缓存，属于正常现象，无需删除。
 3. **内存占用**：CPU运行时，模型加载约占用500MB+内存；GPU运行时（支持CUDA），内存占用会降低，推理速度更快。
-4. **模型更新**：若后续需升级模型，直接替换 `./models/bge-small-zh-v1.5/` 下的文件即可，无需修改其他代码（确保文件名不变）。
+4. **模型更新**：若后续需升级模型，直接替换 `./bge-small-zh-v1.5/` 下的文件即可，无需修改其他代码（确保文件名不变）。
 
 
 ## 📞 获取帮助
