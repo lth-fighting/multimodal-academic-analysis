@@ -1,3 +1,4 @@
+# deepseek_llm.py
 from langchain_openai import ChatOpenAI
 from config import *
 
@@ -17,4 +18,5 @@ def paper_answer(prompt):
         return answer
     except Exception as e:
         return f"调用DeepSeek API时出错: {str(e)}"
+
 
