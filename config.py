@@ -7,9 +7,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 # DeepSeek 基址
 DEEPSEEK_URL = "https://api.deepseek.com"
 # DeepSeek api_key
-DEEPSEEK_KEY = "sk-6321ebc75a0741e68625b92c48cb6e61"
-# 联网查询 api_key
-SERPAPI_KEY = "8425b0c3cf3c65de9d6419a19a686c4abf3066aa217004d03c3e0171443d4f19"
+DEEPSEEK_KEY = "your-deepseek-api-key"
 
 # 向量嵌入模型
 EMBEDDING_MODEL = "./bge-small-zh-v1.5"
@@ -88,3 +86,4 @@ def init_session_state(reset=False):
         st.session_state.messages = []
     if "chat_history_store" not in st.session_state:
         st.session_state.chat_history_store = init_history_store()
+
