@@ -11,7 +11,7 @@
 ```bash
 # 使用 git lfs 下载（推荐）
 git lfs install
-git clone https://huggingface.co/facebook/bart-large-chinese ./models/bart-large-chinese
+git clone https://huggingface.co/facebook/bart-large-chinese ./bart-large-chinese
 
 # 或者直接下载压缩包并解压到此文件夹
 ```
@@ -21,7 +21,7 @@ git clone https://huggingface.co/facebook/bart-large-chinese ./models/bart-large
 请确保 `models/bart-large-chinese/` 文件夹中包含以下必要文件：
 
 ```
-models/bart-large-chinese/
+bart-large-chinese/
 ├── config.json              # 模型配置文件
 ├── pytorch_model.bin        # 模型权重文件
 ├── vocab.json               # 词汇表文件
@@ -36,7 +36,7 @@ models/bart-large-chinese/
 
 ```python
 # 修改摘要模型路径指向本地模型
-SUMMARY_MODEL_ID = "./models/bart-large-chinese"
+SUMMARY_MODEL_ID = "./bart-large-chinese"
 ```
 
 ### 4. 验证安装
