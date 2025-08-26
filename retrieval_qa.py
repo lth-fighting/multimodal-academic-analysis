@@ -1,3 +1,4 @@
+# retrieval_qa.py
 from config import *
 from deepseek_llm import paper_answer
 import torch
@@ -99,3 +100,4 @@ def get_answer(query):
         answer = f"生成答案时错误: {str(e)}"
 
     return answer, docs
+
