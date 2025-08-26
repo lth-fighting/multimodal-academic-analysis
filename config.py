@@ -1,3 +1,4 @@
+# config.py
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.runnables.history import RunnableWithMessageHistory
 import streamlit as st
@@ -86,4 +87,5 @@ def init_session_state(reset=False):
         st.session_state.messages = []
     if "chat_history_store" not in st.session_state:
         st.session_state.chat_history_store = init_history_store()
+
 
