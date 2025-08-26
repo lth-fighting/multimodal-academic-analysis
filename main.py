@@ -1,3 +1,4 @@
+# main.py
 from documents_processor import *
 import streamlit as st
 from retrieval_qa import get_answer
@@ -202,4 +203,5 @@ st.sidebar.info(
     f"系统状态: {len(st.session_state.active_docs)} 个激活文档\n"
     "技术栈: Langchain + ChromaDB + HuggingFace"
 )
+
 
