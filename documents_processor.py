@@ -1,3 +1,4 @@
+# documents_processor.py
 from langchain_community.document_loaders import (
     PyPDFLoader, 
     Docx2txtLoader, 
@@ -145,3 +146,4 @@ def generate_document_summary(doc_name, chunks):
         st.session_state.doc_summaries[doc_name] = summary
     except Exception as e:
         st.session_state.doc_summaries[doc_name] = f"摘要生成失败: {str(e)}"
+
