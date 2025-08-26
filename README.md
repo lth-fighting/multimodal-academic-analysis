@@ -88,14 +88,23 @@ streamlit run main.py
 使用分析工具: 利用"重点文献分析"和"检索分析"选项卡进行深度数据探索和检索优化。
 
 ## 📁 项目结构
+
 multimodal-academic-qa-system/
+
 ├── main.py                    # 主应用入口，Streamlit 界面逻辑
+
 ├── config.py                  # 全局配置（API密钥、模型路径、提示词模板等）
+
 ├── retrieval_qa.py            # 核心检索与问答链逻辑
+
 ├── documents_processor.py     # 文档加载、处理、向量化模块
+
 ├── deepseek_llm.py           # DeepSeek LLM 调用封装
+
 ├── visualization.py           # 检索历史可视化绘图
+
 ├── requirements.txt           # Python 项目依赖
+
 └── chroma_db/                 # 向量数据库持久化存储目录（运行时自动生成）
 
 ## ⚙️ 配置说明
