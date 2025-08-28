@@ -66,38 +66,10 @@ def get_answer(query):
     try:
         prompt_text = f"{QA_SYS_PROMPT.format(context=context, question=query)}"
         answer = paper_answer(prompt_text)
-        # model_name = SUMMARY_MODEL_ID.split('./')[1]
-        # tokenizer = AutoTokenizer.from_pretrained(model_name)
-        # model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-        #
-        # device = 0 if torch.cuda.is_available() else -1
-        # if device == 0:
-        #     model = model.cuda()
-        #
-        # prompt_text = f"{QA_SYS_PROMPT.format(context=context, question=query)}"
-        #
-        # inputs = tokenizer(
-        #     [prompt_text],
-        #     max_length=1024,
-        #     return_tensors="pt",
-        #     truncation=True
-        # )
-        #
-        # if device == 0:
-        #     inputs = {k: v.cuda() for k, v in inputs.items()}
-        #
-        # summary_ids = model.generate(
-        #     inputs["input_ids"],
-        #     num_beams=4,
-        #     max_length=512,
-        #     min_length=50,
-        #     early_stopping=True
-        # )
-        #
-        # answer = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
     except Exception as e:
         answer = f"生成答案时错误: {str(e)}"
 
     return answer, docs
+
 
